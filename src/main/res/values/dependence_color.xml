@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- app所有页面的背景色-->
+    <color name="window_background">@color/gray_color_f6f5f4</color>
+
+    <!-- 浅色字，首页来源、评论用户、输入提示、已读颜色-->
+    <color name="text_color_tertiary">@color/gray_color_a0a0a0</color>
+
+    <!--分享框颜色-->
+    <color name="share_dialog_scrollbar_color">#1f000000</color>
+    <color name="detail_share_cancel_bg_normal">#f8f8f8</color>
+    <color name="detail_share_cancel_bg_pressed">#f0f0f0</color>
+
+    <!-- 文字颜色-->
+    <color name="text_color_f66059">#f66059</color>
+
+
+</resources>

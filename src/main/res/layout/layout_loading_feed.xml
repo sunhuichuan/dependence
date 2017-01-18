@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        android:paddingTop="70dp">
+
+        <LinearLayout
+            android:id="@+id/view_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/loading_progressbar"/>
+
+        </LinearLayout>
+
+        <!-- 无网提示-->
+        <LinearLayout
+            android:id="@+id/view_no_net"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_net_unavailable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络出错"
+                android:textColor="@color/gray_color_545454"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_net_unavailable_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="换个姿势点击屏幕试试"
+                android:textColor="@color/text_color_tertiary"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- 无数据提示-->
+        <LinearLayout
+            android:id="@+id/view_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_no_data_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无新内容"
+                android:textColor="@color/gray_color_545454"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_no_data_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="暂无新内容，请看看其他分类吧"
+                android:textColor="@color/text_color_tertiary"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <!-- 加载错误提示-->
+        <LinearLayout
+            android:id="@+id/view_load_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_load_error_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="访问出错"
+                android:textColor="@color/gray_color_545454"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_load_error_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="点击屏幕刷新看看"
+                android:textColor="@color/text_color_tertiary"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</android.support.v4.widget.NestedScrollView>

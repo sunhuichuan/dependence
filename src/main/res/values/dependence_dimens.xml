@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="feed_loading_error_margin">-36dp</dimen>
+
+
+    <!-- TitleBarHeight-->
+    <dimen name="title_bar_height">45dp</dimen>
+
+    <!-- TextSize-->
+    <dimen name="text_size_40">20sp</dimen>
+    <dimen name="text_size_36">18sp</dimen>
+
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--标题栏Layout-->
+    <declare-styleable name="TitleBarLayout">
+        <!-- Mode of TitleBarLayout that should be used -->
+        <attr name="styleType">
+            <flag name="red" value="0x0" />
+            <flag name="white" value="0x1" />
+        </attr>
+        <!-- title Name -->
+        <attr name="titleName" format="reference|string" />
+    </declare-styleable>
+
+
+</resources>

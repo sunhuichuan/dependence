@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.yao.dependence">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/DroidTheme">
+
+
+        <!-- QQ授权登录sdk需要的Activity -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <!--xiegang appid-->
+                <data android:scheme="tencent1105605399"/>
+                <!--wangwang appid-->
+                <!--<data android:scheme="tencent1104986549" />-->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="behind"/>
+
+        <!-- 微博授权登录sdk需要的授权页Activity-->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+
+        <!-- 空Activity,用于QQ分享-->
+        <activity
+            android:name=".share.activity.EmptyQQActivity"
+            android:theme="@style/DroidTheme.Translucent"/>
+        <!-- 空Activity,用于Weibo分享-->
+        <activity
+            android:name=".share.activity.EmptyWeiboActivity"
+            android:theme="@style/DroidTheme.Translucent">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+
+        <!-- 支付宝支付-->
+
+
+        <activity
+            android:name="com.yao.dependence.pay.alipay.PayDemoActivity"
+            android:icon="@drawable/default_pic_small"
+            android:label="@string/app_name"/>
+        <activity
+            android:name="com.yao.dependence.pay.alipay.H5PayDemoActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+
+        <!-- alipay sdk end -->
+
+
+        <!--融云相关-->
+
+
+        <!--融云相关的Activity-->
+        <activity
+            android:name=".rongyun.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data
+                    android:host="com.jrjx.slash"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong"/>
+            </intent-filter>
+        </activity>
+
+
+        <!--接受融云推送的Receiver-->
+        <receiver
+            android:name=".rongyun.receiver.RongyunNotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED"/>
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED"/>
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED"/>
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!--&lt;!&ndash; 请将CHANNAL改为app的发布渠道 < &ndash;&gt;-->
+        <!--<meta-data-->
+        <!--android:name="InstallChannel"-->
+        <!--android:value="CHANNAL"/>-->
+
+        <!--&lt;!&ndash; 高德地图 &ndash;&gt;-->
+        <!--<meta-data-->
+        <!--android:name="com.amap.api.v2.apikey"-->
+        <!--android:value="f1175b5989cbf80c464f9d65bd7250b7"/>-->
+
+        <!--&lt;!&ndash; soso &ndash;&gt;-->
+        <!--<meta-data-->
+        <!--android:name="TencentMapSDK"-->
+        <!--android:value="7JYBZ-4Y3W4-JMUU7-DJHQU-NOYH7-SRBBU"/>-->
+
+
+        <!--以上 融云相关-->
+
+
+        <!--Umeng 组件-->
+
+        <!--友盟意见反馈Activity声明-->
+        <!--经抓包测试，不用清单文件注册apkey会出现注册不上的情况，不知道为什么，也许是注册太晚了？-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57cac7b967e58eb84a004dd4"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="main_channel"/>
+
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+
+        <!--以上Umeng 组件-->
+
+
+
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/forward_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fbedeceb"
+        android:orientation="vertical"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/share_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:text="分享到"
+                android:textColor="#545454"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_share_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="true"
+            android:scrollbarStyle="insideInset"
+            android:scrollbarThumbHorizontal="@color/share_dialog_scrollbar_color"
+            android:scrollbarSize="2dp"
+            android:scrollbars="horizontal">
+
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/share_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#dbdbdb"
+            android:orientation="horizontal" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_share_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+        </HorizontalScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/bottom_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/detail_share_cancel_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#545454"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

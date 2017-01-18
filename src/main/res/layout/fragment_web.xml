@@ -1,0 +1,113 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <WebView
+            android:id="@+id/wvWebShow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/WebViewProgress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:indeterminate="false"
+            android:maxHeight="5px"
+            android:minHeight="5px" >
+        </ProgressBar>
+
+        <ProgressBar
+            android:id="@+id/pb_pageCenterProgressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottomToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="@color/blue_color_2c63ef"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <Button
+                android:id="@+id/mMenuBack"
+                android:layout_width="wrap_content"
+                android:layout_height="45dip"
+                android:text="后退"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <Button
+                android:id="@+id/mMenuNext"
+                android:layout_width="wrap_content"
+                android:layout_height="45dip"
+                android:text="前进"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <Button
+                android:id="@+id/mMenuHomePage"
+                android:layout_width="wrap_content"
+                android:layout_height="45dip"
+                android:text="主页"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <Button
+                android:id="@+id/mMenuRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="45dip"
+                android:text="刷新"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <Button
+                android:id="@+id/mMenuMore"
+                android:layout_width="wrap_content"
+                android:layout_height="45dip"
+                android:text="更多"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
