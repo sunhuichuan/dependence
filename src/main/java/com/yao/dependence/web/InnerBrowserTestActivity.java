@@ -26,7 +26,7 @@ import android.widget.ProgressBar;
 
 import com.yao.dependence.R;
 import com.yao.dependence.ui.BaseActivity;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -334,7 +334,7 @@ public class InnerBrowserTestActivity extends BaseActivity {
         public void onPageFinished(WebView view, final String url) {
             progressBar.setVisibility(View.INVISIBLE);
             // view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-            LogUtil.i(TAG, "页面加载完成");
+            LoggerUtil.i(TAG, "页面加载完成");
 
         }
 

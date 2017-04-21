@@ -16,8 +16,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
@@ -31,9 +29,8 @@ import android.widget.ProgressBar;
 import com.yao.dependence.R;
 import com.yao.dependence.ui.BaseFragment;
 import com.yao.dependence.utils.URICenter;
-import com.yao.dependence.web.cookie.CookieTask;
 import com.yao.devsdk.SdkConfig;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -446,7 +443,7 @@ public class WebFragment extends BaseFragment {
                 pb_pageCenterProgressBar.setVisibility(View.INVISIBLE);
             }
             // view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-            LogUtil.i(TAG, "页面加载完成");
+            LoggerUtil.i(TAG, "页面加载完成");
             String title = mWebShow.getTitle();
 
         }
@@ -458,7 +455,7 @@ public class WebFragment extends BaseFragment {
             }
 
             currentUrl = url;
-            LogUtil.i(TAG, "开始加载页面");
+            LoggerUtil.i(TAG, "开始加载页面");
 
         }
 

@@ -1,42 +1,14 @@
 package com.yao.dependence.share;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
 
-import com.alipay.share.sdk.openapi.APMediaMessage;
-import com.alipay.share.sdk.openapi.APWebPageObject;
-import com.alipay.share.sdk.openapi.IAPApi;
-import com.alipay.share.sdk.openapi.SendMessageToZFB;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.tencent.connect.share.QQShare;
-import com.tencent.connect.share.QzoneShare;
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.tauth.IUiListener;
-import com.tencent.tauth.Tencent;
-import com.tencent.tauth.UiError;
-import com.yao.dependence.R;
-import com.yao.dependence.share.activity.EmptyQQActivity;
-import com.yao.dependence.sso.AlipaySDK;
 import com.yao.dependence.sso.QQSdk;
 import com.yao.dependence.sso.WeiboSDK;
 import com.yao.dependence.sso.WeixinSDK;
 import com.yao.devsdk.SdkConfig;
-import com.yao.devsdk.utils.SdkUtil;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.ArrayList;
 
 public class SharedObject implements Parcelable {
@@ -69,16 +41,6 @@ public class SharedObject implements Parcelable {
      * 微信收藏
      */
     public static final int SHARE_TYPE_WEIXIN_FAVORITE = 7;
-
-    /**
-     * 支付宝好友分享
-     */
-    public static final int SHARE_TYPE_ALIPAY_FRIENDS = 8;
-    /**
-     * 支付宝生活圈分享
-     */
-    public static final int SHARE_TYPE_ALIPAY_CIRCLE = 9;
-
 
     public static final int REQUEST_CODE_SHARE = 1024;
 
@@ -129,11 +91,6 @@ public class SharedObject implements Parcelable {
             case SharedObject.SHARE_TYPE_WEIXIN_FAVORITE:
                 WeixinSDK.shareToWeixin(this);
                 break;
-            case SharedObject.SHARE_TYPE_ALIPAY_FRIENDS:
-            case SharedObject.SHARE_TYPE_ALIPAY_CIRCLE:
-                AlipaySDK.shareToAlipay(this);
-
-                break;
             case SharedObject.SHARE_TYPE_WEIBO:
             case SharedObject.SHARE_TYPE_WEIBO_IMAGE:
                 WeiboSDK.shareToWeibo(context,this);
@@ -172,24 +129,6 @@ public class SharedObject implements Parcelable {
             so.shareType = type;
             return this;
         }
-
-//        /**
-//         * 设定要分享的PageCardInfo, 调用此方法后，setTitle,setSummary,setUrl,setThumbnailUrl都不需要再次调用
-//         *
-//         * @param cardInfo PageCardInfo
-//         * @return this
-//         */
-//        public Builder setPageCardInfo(PageCardInfo cardInfo) {
-//            if (cardInfo != null) {
-//                so.summary = cardInfo.mAbstract;
-//                so.title = cardInfo.mCardTitle;
-//                so.url = cardInfo.mCardArticleUrl;
-//                if (cardInfo.mCardThumbnail.size() > 0) {
-//                    so.thumbnailUrl = cardInfo.mCardThumbnail.get(0).getDesUrl();
-//                }
-//            }
-//            return this;
-//        }
 
         /**
          * 设定要分享的专题

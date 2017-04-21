@@ -1,6 +1,6 @@
 package com.yao.dependence.rxjava;
 
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 
 import rx.Subscriber;
 
@@ -20,13 +20,13 @@ public abstract class WrapperSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onError(Throwable e) {
-        LogUtil.e(TAG,"请求异常了Exception:-->",e);
+        LoggerUtil.e(TAG,"请求异常了Exception:-->",e);
         onWrapperError(e);
     }
 
     @Override
     public void onNext(T t) {
-        LogUtil.i(TAG,"请求到的结果：-->"+t.toString());
+        LoggerUtil.i(TAG,"请求到的结果：-->"+t.toString());
         onWrapperNext(t);
     }
 

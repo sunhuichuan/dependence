@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.yao.dependence.R;
 import com.yao.devsdk.SdkConfig;
 import com.yao.devsdk.constants.SdkConst;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.ui.SDKBaseActivity;
 
 /**
@@ -96,7 +96,7 @@ public class TitleBarLayout extends Toolbar{
             setTitleStyle(styleType);
             initItemButton();
         }catch (Exception ex){
-            LogUtil.e(TAG,"titleBarLayout-->异常2",ex);
+            LoggerUtil.e(TAG,"titleBarLayout-->异常2",ex);
         }
 
         if (isInEditMode()){
@@ -110,7 +110,7 @@ public class TitleBarLayout extends Toolbar{
      * 初始化默认的button样式
      */
     private void initItemButton() {
-        LogUtil.i(TAG,"TitleBarLayout ---> initItemButton");
+        LoggerUtil.i(TAG,"TitleBarLayout ---> initItemButton");
         hideRightItemView();
 //        setLeftButtonContent(R.drawable.title_bar_back_white_selector);
 
@@ -134,7 +134,7 @@ public class TitleBarLayout extends Toolbar{
         }else{
             //其他类型的Activity
             if (SdkConst.DEBUG){
-                LogUtil.e(TAG,"关闭Activity-->"+thisContext.getClass().getName());
+                LoggerUtil.e(TAG,"关闭Activity-->"+thisContext.getClass().getName());
             }
             thisContext.finish();
         }
@@ -191,7 +191,7 @@ public class TitleBarLayout extends Toolbar{
      * @return
      */
     public void hideBackItemView(){
-        LogUtil.i(TAG,"TitleBarLayout ---> hideBackItemView");
+        LoggerUtil.i(TAG,"TitleBarLayout ---> hideBackItemView");
         if (mTitleRootView !=null){
             rl_back_group.setVisibility(View.INVISIBLE);
         }
@@ -202,7 +202,7 @@ public class TitleBarLayout extends Toolbar{
      * @return
      */
     public void hideRightItemView(){
-        LogUtil.i(TAG,"TitleBarLayout ---> hideRightItemView");
+        LoggerUtil.i(TAG,"TitleBarLayout ---> hideRightItemView");
         if (mTitleRootView !=null){
             rl_right_group.setVisibility(View.INVISIBLE);
         }

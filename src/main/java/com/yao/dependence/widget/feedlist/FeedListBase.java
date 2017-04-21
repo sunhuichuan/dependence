@@ -379,7 +379,7 @@ public abstract class FeedListBase<T> extends FrameLayout {
                 params = callbacks.getPullToReLoadParam();
                 break;
             default:
-                SdkUtil.showDebugToast(SdkConfig.getAppContext(),"不合法请求类型");
+                SdkUtil.showDebugToast("不合法请求类型");
                 break;
         }
         callbacks.startRequestFeed(requestType,params);

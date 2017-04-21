@@ -1,6 +1,6 @@
 package com.yao.dependence.utils;
 
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,10 +19,10 @@ public class SchemeKit{
 			try {
 				context.startActivity(intent);
 			} catch (Exception e) {
-				LogUtil.e(TAG, "start Activity Exception ,应该是Activity没有找到");// TODO: handle exception
+				LoggerUtil.e(TAG, "start Activity Exception ,应该是Activity没有找到");// TODO: handle exception
 			}
 		} else {
-			LogUtil.e(TAG, "context is not an Activity");
+			LoggerUtil.e(TAG, "context is not an Activity");
 		}
 	}
 

@@ -1,6 +1,6 @@
 package com.yao.dependence.utils;
 
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 
 /**
  *
@@ -28,7 +28,7 @@ public class PriceUtils {
             float price = Float.parseFloat(priceServiceUnit) / 100;
             return price;
         }catch (Exception e){
-            LogUtil.e(TAG, "服务器返回单价异常",e);
+            LoggerUtil.e(TAG, "服务器返回单价异常",e);
             //当服务器返回数据错误时，页面显示一个极大的数字，以免价格过低用户疯狂下单
             return 99999;
         }
@@ -43,7 +43,7 @@ public class PriceUtils {
             float price = Float.parseFloat(priceInput) * 100;
             return (int)price;
         }catch (Exception e){
-            LogUtil.e(TAG, "服务器返回单价异常",e);
+            LoggerUtil.e(TAG, "服务器返回单价异常",e);
             //当服务器返回数据错误时，页面显示一个极大的数字，以免价格过低用户疯狂下单
             return 99999;
         }

@@ -2,12 +2,10 @@ package com.yao.dependence.net;
 
 import com.yao.dependence.net.request.LoginBean;
 import com.yao.dependence.net.request.RegisterBean;
-import com.yao.dependence.net.result.CategoryConfigResult;
 import com.yao.dependence.model.City;
 import com.yao.dependence.model.Comment;
 import com.yao.dependence.net.result.EmptyResult;
 import com.yao.dependence.model.Feed;
-import com.yao.dependence.net.result.HomeFeedResult;
 import com.yao.dependence.net.result.LoginResult;
 import com.yao.dependence.model.OrderDetail;
 import com.yao.dependence.model.PostDetail;
@@ -18,14 +16,13 @@ import com.yao.dependence.net.result.UploadImageResult;
 import com.yao.dependence.model.User;
 import com.yao.dependence.net.result.WeixinOrderResult;
 import com.yao.dependence.model.AlipayOrder;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.net.HttpClient;
 import com.yao.devsdk.net.StringRequestBody;
 import com.yao.devsdk.net.response.HttpResult;
 
 import java.io.IOException;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -415,7 +412,7 @@ public class RequestManager {
                     HttpResult<User> httpResult = resultResponse.body();
 
                     if (httpResult.getStatus() != 1) {
-                        LogUtil.e(TAG, "获取用户信息失败：" + httpResult.getStatus() + "---" + httpResult.getMessage());
+                        LoggerUtil.e(TAG, "获取用户信息失败：" + httpResult.getStatus() + "---" + httpResult.getMessage());
                         return null;
                     } else {
                         User user = httpResult.getData();
@@ -423,7 +420,7 @@ public class RequestManager {
                     }
 
                 } catch (IOException e) {
-                    LogUtil.e(TAG, "获取用户信息异常", e);
+                    LoggerUtil.e(TAG, "获取用户信息异常", e);
                     return null;
                 }
             }

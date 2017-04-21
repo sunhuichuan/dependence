@@ -3,7 +3,7 @@ package com.yao.dependence.model;
 import android.text.TextUtils;
 
 import com.yao.devsdk.SdkConfig;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.utils.StringKit;
 
 import java.io.Serializable;
@@ -67,7 +67,7 @@ public class OrderDetail implements Serializable{
             int state = Integer.parseInt(status);
             return state;
         } catch (Exception e) {
-            LogUtil.e(TAG,"格式化异常",e);
+            LoggerUtil.e(TAG,"格式化异常",e);
             return -1;
         }
     }
@@ -116,7 +116,7 @@ public class OrderDetail implements Serializable{
             return stateText;
 
         }catch (Exception e){
-            LogUtil.e(TAG,"状态异常",e);
+            LoggerUtil.e(TAG,"状态异常",e);
             return "未知订单状态("+state+")";
         }
 

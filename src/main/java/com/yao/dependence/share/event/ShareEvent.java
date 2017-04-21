@@ -28,10 +28,6 @@ public class ShareEvent {
     }
 
 
-    public boolean isAlipay(){
-        return shareType == SharedObject.SHARE_TYPE_ALIPAY_FRIENDS;
-    }
-
 
     public boolean isShareSuccess(){
         return errorCode == ERROR_SUCCESS;

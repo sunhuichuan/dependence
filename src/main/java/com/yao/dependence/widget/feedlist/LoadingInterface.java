@@ -3,13 +3,9 @@ package com.yao.dependence.widget.feedlist;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.yao.dependence.R;
-import com.yao.devsdk.log.LogUtil;
 
 
 /**

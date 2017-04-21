@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 import com.yao.dependence.R;
 import com.yao.devsdk.SdkConfig;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.utils.DisplayUtil;
 import com.yao.devsdk.utils.SdkUtil;
 
@@ -210,14 +210,6 @@ public class ForwardDialog extends QuickOptionDialog implements View.OnClickList
                     shareByWx(SharedObject.SHARE_TYPE_WEIXIN_FAVORITE);
                 }
                 break;
-                case ForwardViewBean.TYPE_ZHIFUBAO: {
-                    shareAlipay(SharedObject.SHARE_TYPE_ALIPAY_FRIENDS);
-                }
-                break;
-                case ForwardViewBean.TYPE_SHENGHUOQUAN: {
-                    shareAlipay(SharedObject.SHARE_TYPE_ALIPAY_CIRCLE);
-                }
-                break;
                 case ForwardViewBean.TYPE_FUZHI_LIANJIE: {
                     copyLink();
                 }
@@ -230,11 +222,11 @@ public class ForwardDialog extends QuickOptionDialog implements View.OnClickList
 
             this.dismiss();
 
-            SdkUtil.showDebugToast(appContext,"点击的type = " + forwardBean.type);
+            SdkUtil.showDebugToast("点击的type = " + forwardBean.type);
 
 
         } catch (Exception e) {
-            LogUtil.e(TAG, "点击事件异常", e);
+            LoggerUtil.e(TAG, "点击事件异常", e);
         }
     }
 
@@ -278,14 +270,6 @@ public class ForwardDialog extends QuickOptionDialog implements View.OnClickList
         }
         new SharedObject.Builder().setType(type)
                 .setTopic(mForwardInfo).build().share(mContext);
-    }
-
-    public void shareAlipay(int type) {
-        if (mForwardInfo == null){
-            return;
-        }
-        new SharedObject.Builder().setType(type).setTopic(mForwardInfo)
-                .build().share(mContext);
     }
 
 
@@ -335,8 +319,6 @@ public class ForwardDialog extends QuickOptionDialog implements View.OnClickList
         public static final int TYPE_QQ = 4;
         public static final int TYPE_QZONE = 5;
         public static final int TYPE_WEIXIN_COLLECTION = 6;
-        public static final int TYPE_ZHIFUBAO = 7;
-        public static final int TYPE_SHENGHUOQUAN = 8;
         public static final int TYPE_FUZHI_LIANJIE = 9;
         public static final int TYPE_MORE = 10;
 

@@ -3,7 +3,7 @@ package com.yao.dependence.net;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.net.exception.ApiException;
 import com.yao.devsdk.net.response.HttpResult;
 
@@ -23,11 +23,11 @@ public abstract class NetSubscriber<T> extends Subscriber<HttpResult<T>> {
     @Override
     public void onStart() {
 
-        LogUtil.i(TAG,"onStart--Thread: "+Thread.currentThread().getId());
+        LoggerUtil.i(TAG,"onStart--Thread: "+Thread.currentThread().getId());
         mainThreadHandler.post(new Runnable() {
             @Override
             public void run() {
-                LogUtil.i(TAG,"onStart--mainThread: "+Thread.currentThread().getId());
+                LoggerUtil.i(TAG,"onStart--mainThread: "+Thread.currentThread().getId());
 
             }
         });
@@ -35,7 +35,7 @@ public abstract class NetSubscriber<T> extends Subscriber<HttpResult<T>> {
 
     @Override
     public void onError(final Throwable e) {
-        LogUtil.e(TAG,"请求异常了Exception:-->",e);
+        LoggerUtil.e(TAG,"请求异常了Exception:-->",e);
         mainThreadHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -50,7 +50,7 @@ public abstract class NetSubscriber<T> extends Subscriber<HttpResult<T>> {
 
     @Override
     public void onNext(final HttpResult<T> httpResult) {
-        LogUtil.i(TAG,"请求到的结果：-->"+httpResult.toString());
+        LoggerUtil.i(TAG,"请求到的结果：-->"+httpResult.toString());
         mainThreadHandler.post(new Runnable() {
             @Override
             public void run() {

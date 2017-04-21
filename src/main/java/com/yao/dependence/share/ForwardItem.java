@@ -8,7 +8,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yao.dependence.R;
-import com.yao.dependence.sso.AlipaySDK;
 import com.yao.dependence.sso.WeixinSDK;
 import com.yao.devsdk.SdkConfig;
 import com.yao.devsdk.utils.DisplayUtil;
@@ -99,27 +98,6 @@ public class ForwardItem extends RelativeLayout {
                 case ForwardDialog.ForwardViewBean.TYPE_QQ:
                 case ForwardDialog.ForwardViewBean.TYPE_QZONE: {
                     if (!SdkUtil.appIsInstalled(appContext, "com.tencent.mobileqq")) {
-                        //未安装
-                        iv_icon.setEnabled(false);
-                    }
-                }
-                break;
-                case ForwardDialog.ForwardViewBean.TYPE_ZHIFUBAO:{
-                    if (AlipaySDK.getInstance().getAPApi().isZFBAppInstalled()
-                            && AlipaySDK.getInstance().getAPApi().isZFBSupportAPI()){
-
-                    }else{
-                        //未安装
-                        iv_icon.setEnabled(false);
-                    }
-                }
-                break;
-                case ForwardDialog.ForwardViewBean.TYPE_SHENGHUOQUAN: {
-                    if (AlipaySDK.getInstance().getAPApi().isZFBAppInstalled()
-                            && AlipaySDK.getInstance().getAPApi().isZFBSupportAPI()
-                            && AlipaySDK.getInstance().getAPApi().getZFBVersionCode()>=84){
-
-                    }else{
                         //未安装
                         iv_icon.setEnabled(false);
                     }

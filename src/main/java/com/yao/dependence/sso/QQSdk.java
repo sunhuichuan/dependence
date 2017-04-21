@@ -14,7 +14,7 @@ import com.tencent.tauth.UiError;
 import com.yao.dependence.share.SharedObject;
 import com.yao.dependence.share.activity.EmptyQQActivity;
 import com.yao.devsdk.SdkConfig;
-import com.yao.devsdk.log.LogUtil;
+import com.yao.devsdk.log.LoggerUtil;
 import com.yao.devsdk.utils.SdkUtil;
 
 import org.json.JSONObject;
@@ -64,7 +64,7 @@ public class QQSdk {
                 mTencent.setOpenId(openId);
             }
         } catch (Exception e) {
-            LogUtil.e(TAG, "异常", e);
+            LoggerUtil.e(TAG, "异常", e);
         }
     }
 
@@ -74,9 +74,9 @@ public class QQSdk {
     public void login(Activity activity, String string, IUiListener listener){
         if (!mTencent.isSessionValid()) {
             mTencent.login(activity, string, listener);
-            LogUtil.d(TAG, "SDKQQAgentPref  FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+            LoggerUtil.d(TAG, "SDKQQAgentPref  FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
         } else {
-            SdkUtil.showDebugToast(appContext,"QQ session 无效");
+            SdkUtil.showDebugToast("QQ session 无效");
         }
     }
 
@@ -117,7 +117,7 @@ public class QQSdk {
                 @Override
                 public void onError(UiError e) {
                     String error = e.errorCode + "," + e.errorMessage + "," + e.errorDetail;
-                    LogUtil.i(TAG, "失败：" + error);
+                    LoggerUtil.i(TAG, "失败：" + error);
                 }
 
                 @Override
@@ -145,7 +145,7 @@ public class QQSdk {
             });
 
         } else {
-            SdkUtil.showDebugToast(appContext,"获取QQ信息 session 无效");
+            SdkUtil.showDebugToast("获取QQ信息 session 无效");
         }
     }
 

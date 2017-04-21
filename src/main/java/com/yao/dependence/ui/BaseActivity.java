@@ -3,7 +3,6 @@ package com.yao.dependence.ui;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.umeng.analytics.MobclickAgent;
 import com.yao.dependence.net.APIService;
 import com.yao.dependence.net.RequestManager;
 import com.yao.devsdk.ui.SDKBaseActivity;
@@ -29,17 +28,6 @@ public class BaseActivity extends SDKBaseActivity{
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MobclickAgent.onPause(this);
-    }
 
 
 }
